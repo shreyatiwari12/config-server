@@ -1,1 +1,45 @@
+spring:
+  application:
+    name: POST-SERVICE
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+
+  h2:
+    console:
+      enabled: true
+
+  cloud:
+    # Uncomment the line below to enable config server
+    # config:
+    #   uri: http://localhost:8888
+
+server:
+  port: 8082
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+management:
+  info:
+    java:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
