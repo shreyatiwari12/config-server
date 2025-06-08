@@ -14,7 +14,7 @@ spring:
     defer-datasource-initialization: true
 
 server:
-  port: 0
+  port: 8083
 
 eureka:
   instance:
