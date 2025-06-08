@@ -1,1 +1,36 @@
+spring:
+  application:
+    name: NotificationService
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+  jpa:
+    show-sql: true
+    defer-datasource-initialization: true
+
+server:
+  port: 0
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+management:
+  info:
+    java:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
