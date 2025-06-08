@@ -19,7 +19,7 @@ spring:
       path: /h2-console
 
 server:
-  port: 8084
+  port: 8085
 
 eureka:
   instance:
